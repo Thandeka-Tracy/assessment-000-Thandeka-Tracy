@@ -9,7 +9,7 @@ class MyTestCases(unittest.TestCase):
     def test_check_number_even_number(self):
         self.assertEqual(check_number(4), "Not Weird")
         self.assertEqual(check_number(8), "Weird")
-        self.assertEqual(check_number(-2), "Very Weird")
+        self.assertEqual(check_number(-2), "Very weird")
 
     def test_check_number_negative_even_number(self):
         self.assertEqual(check_number(-4), "Very weird")

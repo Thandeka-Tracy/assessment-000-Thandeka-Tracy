@@ -94,10 +94,10 @@ def check_number(n:int):
     """
     if n == 0:
         return "Neutral"
+    elif n % 2 !=0 and n < 0:
+        return "Extremely Weird"
     elif n % 2 != 0:
         return "Weird"
-    elif n % 2 != 0 and n <=0:
-        return "Extremely Weird"
     elif n in range(2, 6):
         return "Not Weird"
     elif n in range(6, 21):
