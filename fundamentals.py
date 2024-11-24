@@ -1,13 +1,16 @@
 
 #Question 1
-get_date_of_birth(id_number:str): 
+def get_date_of_birth(id_number:str): 
     """
     STEP 2: Extract the date of birth from the ID number and return it as a string
 
     return format: DD/MM/YY: 
     """
-    birth_of_date = id_number[4:6] 
-    return 
+    birth_of_date = id_number[4:6]
+    month = id_number[2:4]
+    year = id_number[0:2]
+    full_date = f"{birth_of_date}/{month}/{year}"
+    return full_date
 
 
 #Question 2    
@@ -20,10 +23,10 @@ def get_gender(id_number):
     female and if it is greater than 4999, the person is male.
     """
     
-    if int(id_number[6]) > 4:
-    'Male'
+    if int(id_number[6:10]) > 5000:
+        return 'Male'
     else:
-    'Female'
+        return 'Female'
 
     
 #Question 3
@@ -36,10 +39,10 @@ def get_citizenship(id_number):
     a South African citizen and if it is greater than 01, the person is a non-South 
     African citizen.
     """
-if int(id_number[10]) == 0:
-'South African'
-else:
-'Non-South African'
+    if int(id_number[10:12]) < 10:
+        return 'South African'
+    else:
+        return 'Non-South African'
 
 
 #Question 4
@@ -52,7 +55,16 @@ else:
 
     TODO: define a function called fizzbuzz and implement the fucntionality above.
     """
-    
+def fizzbuzz(n):
+    for i in range(1, n+1):
+        if i % 3 == 0 and i % 5 == 0:
+            print("FizzBuzz")
+        elif i % 3 == 0:
+            print("Fizz")
+        elif i % 5 == 0:
+            print("Buzz")
+        else:
+            print(i)
 
             
 
@@ -80,4 +92,17 @@ def check_number(n:int):
     If n is non-positive and even then return 'Very weird'
     If n is non-positive and odd then return 'Extremely Weird'
     """
-
+    if n == 0:
+        return "Neutral"
+    elif n % 2 != 0:
+        return "Weird"
+    elif n % 2 != 0 and n <=0:
+        return "Extremely Weird"
+    elif n in range(2, 6):
+        return "Not Weird"
+    elif n in range(6, 21):
+        return "Weird"
+    elif n > 20:
+        return "Not Weird"
+    elif n <= 0:
+        return "Very weird"
